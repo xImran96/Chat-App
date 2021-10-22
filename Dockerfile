@@ -2,7 +2,7 @@ FROM node:latest
 
 WORKDIR /app
 
-ADD ./app
+ADD ./app .
 
 RUN npm install
 
