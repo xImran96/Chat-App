@@ -4,8 +4,8 @@ WORKDIR /app
 
 ADD . /app
 
-COPY package*.json ./
+RUN npm install
 
-RUN npm install -g npm@8.1.1
+EXPOSE 3000
 
-CMD node src/app.js
+CMD npm start
