@@ -11,7 +11,7 @@ job('Chat-app job DSL'){
 	}
 
 	wrappers {
-		nodejs('nodejs')
+		nodejs('NodeJs')
 	}
 
 	steps {
