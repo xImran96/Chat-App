@@ -6,14 +6,19 @@ pipeline {
 		stage('Preparation'){
 			steps{
 			checkout scm
-			sh "git rev-parse --short HEAD > .git/commit-id"		
+			sh "git rev-parse --short HEAD > .git/commit-id"
+			
 			}
-			post {
-                success {
-                   commit_id = readFile('.git/commit-id').trim()
-                }
-            }
 		}
+
+		stage('Commit_id'){
+			steps{
+					
+					commit_id = readFile('.git/commit-id').trim()
+			
+			}
+		}
+		
 		stage('Test'){
 			steps {
 			nodejs(nodeJSInstallationName: 'NodeJs'){
