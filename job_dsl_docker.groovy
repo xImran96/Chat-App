@@ -1,4 +1,4 @@
-job('Chat-app job DSL'){
+job('Chat-app job DSL Docker'){
 
 	description()
 
