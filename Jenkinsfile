@@ -8,12 +8,11 @@ node {
 	stage('Test'){
 		nodejs(nodeJSInstallationName: 'NodeJs'){
 			sh 'npm install'
-			sh 'echo ${BUILD_NUMBER}'
 		}
 	}	
 	stage('Docker Build/Push'){
 		docker.withRegistry('https://index.docker.io/v1/'){
-			def app = docker.build('ximran96/node-socket:${GIT_COMMIT}', '.').push()
+			def app = docker.build('ximran96/node-socket:${BUILD_NUMBER}.0', '.').push()
 		}
 
 	}
