@@ -8,6 +8,7 @@ node {
 	stage('Test'){
 		nodejs(nodeJSInstallationName: 'NodeJs'){
 			sh 'npm install'
+			sh 'echo ${BUILD_NUMBER}'
 		}
 	}	
 	stage('Docker Build/Push'){
