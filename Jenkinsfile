@@ -12,7 +12,7 @@ node {
 	}	
 	stage('Docker Build/Push'){
 		docker.withRegistry('https://index.docker.io/v1/'){
-			def app = docker.build('ximran96/node-socket:imrania-${BUILD_NUMBER}', '.').push()
+			def app = docker.build('ximran96/node-socket:imrania', '.').push()
 		}
 
 	}
