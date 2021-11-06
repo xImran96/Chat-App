@@ -21,7 +21,7 @@ job('Chat-app job DSL Docker'){
 	steps {
 		dockerBuildAndPublish {
 			repositoryName('ximran96/node-socket')
-            tag('${BUILD_TIMESTAMP}-${GIT_REVISION,length=7}')
+            tag('${BUILD_NUMBER}-${GIT_REVISION,length=7}')
             registryCredentials('docker-hub')
             forcePull(false)
             createFingerprints(false)
