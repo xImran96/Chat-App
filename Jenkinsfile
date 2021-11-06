@@ -8,7 +8,7 @@ node {
 	stage('Test'){
 		nodejs(nodeJSInstallationName: 'NodeJs'){
 			sh 'npm install'
-			sh 'echo commit_id'
+			sh 'echo ${commit_id}'
 		}
 	}	
 	stage('Docker Build/Push'){
