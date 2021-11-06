@@ -11,8 +11,7 @@ node {
 		}
 	}	
 	stage('Docker Build/Push'){
-
-		docker.withRegistry('https://index.docker.io/v1/', 'dockerhub'){
+		docker.withRegistry('https://hub.docker.com/', 'dockerhub'){
 			def app = docker.build('ximran96/node-socket:${commit_id}', '.').push()
 		}
 
